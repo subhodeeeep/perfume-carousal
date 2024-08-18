@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&family=Mada:wght@200..900&family=Manjari:wght@100;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    --item1-transform: translate(-90vw, 20vh) scale(1);
+    --item1-filter: blur(10px);
+    --item1-z-index: 10;
+
+    --item2-transform: translate(-69vw, 20vh) scale(1.7);
+    --item2-filter: blur(10px);
+    --item2-z-index: 10;
+
+    --item3-transform: translate(0, 0);
+    --item3-filter: blur(0);
+    --item3-z-index: 9;
+
+    --item4-transform: translate(20vw, 20vh) scale(0.5);
+    --item4-filter: blur(10px);
+    --item4-z-index: 8;
+
+    --item5-transform: translate(32vw, 30vh) scale(0.3);
+    --item5-filter: blur(20px);
+    --item5-z-index: 3;
+
+    --item6-transform: translate(50vw, 30vh) scale(0.3);
+    --item6-filter: blur(20px);
+    --item6-z-index: 3;
+}
+body{
+    margin: 0;
+    background-image: linear-gradient(rgb(180, 180, 180), rgba(35, 40, 60, 0.838));
+    height: 100vh;
+    overflow: hidden;
+}
+*{
+    font-size: 1em;
+    margin: 0px;
+    cursor: default;
+}
+*::selection{
+    background-color: rgba(244, 169, 28, 0.379);
+}
+/* header */
+header{
+    display: flex;
+    justify-content: space-around;
+    font-family: 'inter', 'poppins';
+    height: 50px;
+}
+header a{
+    text-decoration: none;
+    color: black;
+}
+.logodiv img{
+    width: 34px;
+    background-color: black;
+    border-radius: 50%;
+}
+#nav1{
+    display: flex;
+    gap: 1.5vw;
+}
+#nav2{
+    display: flex;
+    gap: 0.5vw;
+}
+/* controls */
+.controls{
+    position: absolute;
+    bottom: -90vh;
+    left: 46.3vw;
+    user-select: none;
+
+}
+.controls button{
+    background-color: inherit;
+    border: solid 3px black;
+    border-radius: 50%;
+    padding: 15px 21px;
+    font-weight: 700;
+}
+#back{
+    background-color: inherit;
+    border: none;
+    position: absolute;
+    bottom: -90vh;
+    left: 49vw;
+    user-select: none;
+    font-family: 'Manjari', 'Inter', 'Poppins', 'Roboto';
+    opacity: 0;
+    pointer-events: none;
+}
+/* carousel */
+.carousel{
+    position: relative;
+    margin-top: -50px;
+}
+.carousel .list .item{
+    position: absolute;
+    left: 0;
+    top: 0px;
+    transform: translate(50vw, 30vh) ;
+}
+.carousel .list .item .detail{
+    opacity: 0;
+    pointer-events: none;
+}
+.carousel .list .item img{
+    height: 300px;
+    position: absolute;
+    left: 5vw;
+    top: -3vh;
+}
+.carousel .list .item .introduce{
+    position: absolute;
+    left: -25vw;
+    top: 5vh;
+    opacity: 0;
+    pointer-events: none;
+}
+h2{
+    font-size: 5em;
+    font-family: 'koulen', 'poppins';
+    font-weight: 500;
+    margin-top: -33px;
+    margin-bottom: -30px;
+}
+h3{
+    font-family: 'krona one';
+    font-size: 1.7em;
+    font-weight: 200;
+}
+p{
+    font-family: 'mada', 'poppins';
+    font-size: 1.25em;
+    font-weight: 300;
+}
+.carousel .list .item .introduce .seeDetails{
+    font-family: 'Manjari', 'poppins';
+    margin: 10px -5px;
+    background-color: hsla(0, 0%, 0%, 0);
+    border: none;
+    cursor: pointer;
+}
+.carousel .list .item:nth-child(3) .introduce{
+    opacity: 1;
+    pointer-events: all;
+    animation: fade 0.35s forwards;
+}
+.carousel .list .item:nth-child(1) img{
+    transform: var(--item1-transform);
+    filter: var(--item1-filter);
+    z-index: var(--item1-z-index);
+}
+.carousel .list .item:nth-child(2) img{
+    transform: var(--item2-transform);
+    filter: var(--item2-filter);
+    z-index: var(--item2-z-index);
+}
+.carousel .list .item:nth-child(3) img{
+    transform: var(--item3-transform);
+    filter: var(--item3-filter);
+    z-index: var(--item3-z-index);
+}
+.carousel .list .item:nth-child(4) img{
+    transform: var(--item4-transform);
+    filter: var(--item4-filter);
+    z-index: var(--item4-z-index);
+}
+.carousel .list .item:nth-child(5) img{
+    transform: var(--item5-transform);
+    filter: var(--item5-filter);
+    z-index: var(--item5-z-index);
+}
+.carousel .list .item:nth-child(6) img{
+    transform: var(--item6-transform);
+    filter: var(--item6-filter);
+    z-index: var(--item6-z-index);
+}
+
+.carousel.next .item:nth-child(1) img{
+    animation: nextItem1 1s ease-in-out 1 forwards;
+}
+.carousel.next .item:nth-child(2) img{
+    animation: nextItem2 1s ease-in-out 1 forwards;
+}
+.carousel.next .item:nth-child(3) img{
+    animation: nextItem3 1s ease-in-out 1 forwards;
+}
+.carousel.next .item:nth-child(4) img{
+    animation: nextItem4 1s ease-in-out 1 forwards;
+}
+.carousel.next .item:nth-child(5) img{
+    animation: nextItem5 1s ease-in-out 1 forwards;
+}
+.carousel.next .item:nth-child(6) img{
+    animation: nextItem6 1s ease-in-out 1 forwards;
+}
+.carousel.prev .item:nth-child(1) img{
+    animation: prevItem1 1s ease-in-out 1 forwards;
+}
+.carousel.prev .item:nth-child(2) img{
+    animation: prevItem2 1s ease-in-out 1 forwards;
+}
+.carousel.prev .item:nth-child(3) img{
+    animation: prevItem3 1s ease-in-out 1 forwards;
+}
+.carousel.prev .item:nth-child(4) img{
+    animation: prevItem4 1s ease-in-out 1 forwards;
+}
+.carousel.prev .item:nth-child(5) img{
+    animation: prevItem5 1s ease-in-out 1 forwards;
+}
+.carousel.prev .item:nth-child(6) img{
+    animation: prevItem6 1s ease-in-out 1 forwards;
+}
+@keyframes fade {
+    from{
+        opacity: 0;
+        filter: blur(10px);
+    }to{
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+@keyframes nextItem1 {
+    from{
+        transform: var(--item2-transform);
+        filter: var(--item2-filter);
+        z-index: var(--item2-z-index);
+        }
+}
+@keyframes nextItem2 {
+    from{
+        transform: var(--item3-transform);
+        filter: var(--item3-filter);
+        z-index: var(--item3-z-index);
+        }
+}
+@keyframes nextItem3 {
+    from{
+        transform: var(--item4-transform);
+        filter: var(--item4-filter);
+        z-index: var(--item4-z-index);
+        }
+}
+@keyframes nextItem4 {
+    from{
+        transform: var(--item5-transform);
+        filter: var(--item5-filter);
+        z-index: var(--item5-z-index);
+        }
+}
+@keyframes nextItem5 {
+    from{
+        transform: var(--item6-transform);
+        filter: var(--item6-filter);
+        z-index: var(--item6-z-index);
+        }
+}
+@keyframes nextItem6 {
+    from{
+        transform: translate(40vw, 40vh) scale(0.1);
+        filter: blur(10px);
+        }
+}
+
+
+@keyframes prevItem1 {
+    from{
+        transform: var(--item1-transform);
+    }
+
+}
+@keyframes prevItem2 {
+    from{
+        transform: var(--item1-transform);
+        filter: var(--item1-filter);
+        z-index: var(--item1-z-index);
+        }
+}
+@keyframes prevItem3 {
+    from{
+        transform: var(--item2-transform);
+        filter: var(--item2-filter);
+        z-index: var(--item2-z-index);
+        }
+}
+@keyframes prevItem4 {
+    from{
+        transform: var(--item3-transform);
+        filter: var(--item3-filter);
+        z-index: var(--item3-z-index);
+        }
+}
+@keyframes prevItem5 {
+    from{
+        transform: var(--item4-transform);
+        filter: var(--item4-filter);
+        z-index: var(--item4-z-index);
+        }
+}
+@keyframes prevItem6 {
+    from{
+        transform: var(--item5-transform);
+        filter: var(--item5-filter);
+        z-index: var(--item5-z-index);
+        }
+}
+.carousel.showDetails .item:nth-child(3) .detail{
+    opacity: 1;
+    pointer-events: all;
+    animation: fade 1s forwards;
+}
+.carousel.showDetails .item:nth-child(3) .introduce{
+    opacity: 0;
+    pointer-events: none;
+    animation: fade 1s reverse;
+}
+.carousel.showDetails #back{
+    opacity: 1;
+    pointer-events: all;
+    animation: fade 1s;
+    cursor: pointer;
+}
+#back:hover{
+    background-color: aliceblue;
+}
+.carousel.showDetails .controls button{
+    opacity: 0;
+    pointer-events: none;
+    animation: fade 0.5s reverse;
+}
+.carousel.showDetails .item:not(:nth-child(3)) img{
+    opacity: 0;
+    pointer-events: none;
+    animation: fade 1s reverse;
+}
+.carousel.showDetails .item:nth-child(3) img{
+    transform: translate(-35vw, 5vh) scale(1.2) rotate(45deg);
+    animation: showDetails 2s;
+    transition: all 1s;
+
+}
+.carousel.showDetails .item .detail{
+    max-width: 30vw;
+}
+@keyframes showDetails {
+    from{
+        transform:var(--item3-transform);
+    }
+}
