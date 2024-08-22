@@ -348,3 +348,129 @@ p{
         transform:var(--item3-transform);
     }
 }
+@media (max-width: 500px){
+    :root{
+        --item1-transform: translate(-150vw, 80vh) scale(1);
+        --item1-filter: blur(10px);
+        --item1-z-index: 2;
+
+        --item2-transform: translate(-90vw, 60vh) scale(1.7);
+        --item2-filter: blur(10px);
+        --item2-z-index: 10;
+
+        --item3-transform: translate(0, 0);
+        --item3-filter: blur(0);
+        --item3-z-index: 9;
+
+        --item4-transform: translate(20vw, -20vh) scale(0.5);
+        --item4-filter: blur(10px);
+        --item4-z-index: 4;
+
+        --item5-transform: translate(32vw, -35vh) scale(0.3);
+        --item5-filter: blur(20px);
+        --item5-z-index: 2;
+
+        --item6-transform: translate(100vw, -45vh) scale(0.3);
+        --item6-filter: blur(20px);
+        --item6-z-index: 0;
+    }
+    /* header */
+    header{
+        display: flex;
+        justify-content: space-between;
+        font-family: 'inter', 'poppins';
+        min-width: 360px;
+        height: 50px;
+        font-size: 0.5rem;
+    }
+    header a{
+        text-decoration: none;
+        color: black;
+    }
+    .logodiv img{
+        width: 34px;
+        background-color: black;
+        border-radius: 50%;
+    }
+    #nav1{
+        display: none;
+    }
+    #nav2{
+        display: flex;
+        gap: 0.5vw;
+    }
+    /* controls */
+    .controls{
+        position: absolute;
+        bottom: -90vh;
+        left: 36vw;
+        user-select: none;
+
+    }
+    .controls button{
+        background-color: inherit;
+        border: solid 3px black;
+        border-radius: 50%;
+        padding: 15px 21px;
+        font-weight: 700;
+    }
+    #back{
+        background-color: inherit;
+        border: none;
+        position: absolute;
+        bottom: -90vh;
+        left: 49vw;
+        user-select: none;
+        font-family: 'Manjari', 'Inter', 'Poppins', 'Roboto';
+        opacity: 0;
+        pointer-events: none;
+    }
+    /* carousel */
+    .carousel .list .item img{
+        height: 250px;
+        position: absolute;
+        left: -30vw;
+        top: -20vh;
+    }
+    .carousel .list .item .introduce{
+        position: absolute;
+        left: -40vw;
+        top: 20vh;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .carousel.showDetails .item:nth-child(3) .detail{
+        opacity: 1;
+        pointer-events: all;
+        animation: fade 1s forwards;
+        max-width: 80vw;
+        transform: scale(0.6) translate(-40vw, -25vh);
+    }
+    .carousel.showDetails .item:nth-child(3) .introduce{
+        opacity: 0;
+        pointer-events: none;
+        animation: fade 1s reverse;
+    }
+    .carousel.showDetails #back{
+        opacity: 1;
+        pointer-events: all;
+        animation: fade 1s;
+        cursor: pointer;
+    }
+    .carousel.showDetails .controls button{
+        opacity: 0;
+        pointer-events: none;
+        animation: fade 0.5s reverse;
+    }
+    .carousel.showDetails .item:not(:nth-child(3)) img{
+        opacity: 0;
+        pointer-events: none;
+        animation: fade 0.4s reverse;
+    }
+    .carousel.showDetails .item:nth-child(3) img{
+        transform: translate(-40vw, 20vh) scale(0.6) rotate(45deg);
+        animation: showDetails 2s;
+        transition: all 1s;
+
+    }
+}
