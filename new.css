@@ -460,6 +460,7 @@ p{
     .carousel.showDetails .controls button{
         opacity: 0;
         pointer-events: none;
+        display: none;
         animation: fade 0.5s reverse;
     }
     .carousel.showDetails .item:not(:nth-child(3)) img{
