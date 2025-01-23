@@ -31,7 +31,7 @@ const showSlider = (type) => {
     setTimeout(()=>{
         nextButton.style.pointerEvents = 'auto';
         prevButton.style.pointerEvents = 'auto';
-    }, 2000)
+    }, 1500)
 }
 seeDetailsButton.forEach((button) => {
     button.onclick = function(){
